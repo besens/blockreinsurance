@@ -223,7 +223,7 @@ class Blockreinsurance extends Module
 			SELECT r.`id_reinsurance`, r.`id_shop`, r.`file_name`, rl.`text`
 			FROM `'._DB_PREFIX_.'reinsurance` r
 			LEFT JOIN `'._DB_PREFIX_.'reinsurance_lang` rl ON (r.`id_reinsurance` = rl.`id_reinsurance`)
-			WHERE `id_lang` = '.(int)$id_lang.' '.Shop::addSqlRestrictionOnLang());
+			WHERE `id_lang` = '.(int)$id_lang.' '.Shop::addSqlRestrictionOnLang().' ORDER BY r.`id_reinsurance`');
 	}
 
 	protected function initForm()
